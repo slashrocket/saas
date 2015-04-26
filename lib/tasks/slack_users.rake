@@ -3,6 +3,6 @@ namespace :slack_users do
   task import_all: :environment do
     all_users = Slack.users_list['members']
 
-    all_users.each {|user_info| SlackUser.from_slack(user_info)}
+    all_users.each { |user_info| SlackUser.from_slack(user_info) }
   end
 end
