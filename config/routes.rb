@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
+
   root 'login#index'
 
   post 'login'    => 'sessions#create'
