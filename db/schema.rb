@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20150426160316) do
     t.boolean  "has_files"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-    t.string   "slack_team"
+    t.string   "slack_team",          null: false
   end
 
   create_table "users", force: :cascade do |t|
