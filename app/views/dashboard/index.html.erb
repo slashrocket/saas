@@ -2,6 +2,7 @@
   <div class="table-responsive">
     <table class="table">
       <thead>
+        <th>Avatar</th>
         <th>Slack ID</th>
         <th>Real Name</th>
         <th>Email</th>
@@ -9,6 +10,7 @@
       <tbody>
         <% @slack_users.each do |slack_user| %>
           <tr>
+            <td><img src="<%= slack_user.profile['image_24'] %>"></td>
             <td><%= slack_user.name %></td>
             <td><%= slack_user.profile['real_name'] %></td>
             <td><%= slack_user.profile['email'] %></td>
