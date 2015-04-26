@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
   def index
-    @users = Slack.users_list
+    @slack_users = SlackUser.all
   end
 end
