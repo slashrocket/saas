@@ -1,5 +1,5 @@
 class LoggedInConstraint
   def matches?(request)
-    request.cookies['_saas_session'].present?
+    request.session[:user_id].present?
   end
 end
