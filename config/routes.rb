@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get 'dashboard/index'
+  require File.expand_path('../../lib/logged_in_constraint', __FILE__)
 
-  root 'dashboard#index', constraints: LoggedInConstraint.new(true),
-                          as: authenticated_root
-  root 'login#index', constraints: LoggedInConstraint.new(false)
+  get '/', to: 'dashboard#index', constraints: LoggedInConstraint.new
+  get '/', to: 'login#index'
 
   post 'login'    => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
