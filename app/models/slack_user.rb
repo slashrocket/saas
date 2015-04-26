@@ -24,7 +24,5 @@ class SlackUser < ActiveRecord::Base
     slack_user.team_id = team_hash['team_id']
 
     slack_user.save!
-
-    return slack_user
   end
 end
