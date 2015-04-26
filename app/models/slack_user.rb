@@ -6,8 +6,8 @@ class SlackUser < ActiveRecord::Base
 
   serialize :profile, Hash
 
-  def self.from_slack(slack_hash)
-    SlackUser.find_by(slack_id: slack_hash['id']) || SlackUser.create_from_slack!(slack_hash)
+  def self.from_slack(slack_hash, team_hash)
+    SlackUser.find_by(slack_id: slack_hash['id']) || SlackUser.create_from_slack!(slack_hash, team_hash)
   end
 
   def self.create_from_slack!(slack_hash)
