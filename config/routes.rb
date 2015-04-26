@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   require File.expand_path('../../lib/logged_in_constraint', __FILE__)
 
-  get '/', to: 'dashboard#index', constraints: LoggedInConstraint.new
-  get '/', to: 'login#index'
+  get '/', to: 'dashboard#index', constraints: LoggedInConstraint.new, as: 'dashboard'
+  get '/', to: 'login#index', as: 'login'
 
-  post 'login'    => 'sessions#create'
-  delete 'logout' => 'sessions#destroy'
+  post '/'   => 'sessions#create'
+  delete '/' => 'sessions#destroy'
 end
