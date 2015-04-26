@@ -1,5 +1,6 @@
 class SlackUser < ActiveRecord::Base
   validates :slack_id, presence: true, uniqueness: true
+  validates :slack_team, presence: true
   validates :name, presence: true
   validates :profile, presence: true
 
