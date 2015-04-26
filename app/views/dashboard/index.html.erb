@@ -1,8 +1,29 @@
+<div class="container">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <th>Slack ID</th>
+        <th>Real Name</th>
+        <th>Email</th>
+      </thead>
+      <tbody>
+        <% @slack_users.each do |slack_user| %>
+          <tr>
+            <td><%= slack_user.name %></td>
+            <td><%= slack_user.profile['real_name'] %></td>
+            <td><%= slack_user.profile['email'] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
 <ul>
-	<% @slack_users.each do |slack_user| %>
-		<li>
-			<p style="color: #<%= slack_user.color %>;"><%= slack_user.name %></p>
-			<pre><%= JSON.pretty_generate(slack_user.as_json) %></pre>
-		</li>
-	<% end %>
+  <% @slack_users.each do |slack_user| %>
+    <li>
+      <p style="color: #<%= slack_user.color %>;"><%= slack_user.name %></p>
+      <pre><%= JSON.pretty_generate(slack_user.as_json) %></pre>
+    </li>
+  <% end %>
 </ul>
