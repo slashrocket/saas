@@ -2,7 +2,7 @@
 	<% @slack_users.each do |slack_user| %>
 		<li>
 			<p style="color: #<%= slack_user.color %>;"><%= slack_user.name %></p>
-			<pre><%= slack_user.to_json %></pre>
+			<pre><%= JSON.pretty_generate(slack_user.as_json) %></pre>
 		</li>
 	<% end %>
 </ul>
