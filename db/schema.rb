@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150425232158) do
+ActiveRecord::Schema.define(version: 20150426064113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "slack_users", force: :cascade do |t|
+    t.string   "slack_id",            null: false
+    t.string   "name",                null: false
+    t.boolean  "deleted",             null: false
+    t.string   "color",               null: false
+    t.text     "profile",             null: false
+    t.boolean  "is_admin",            null: false
+    t.boolean  "is_owner",            null: false
+    t.boolean  "is_primary_owner",    null: false
+    t.boolean  "is_restricted",       null: false
+    t.boolean  "is_ultra_restricted", null: false
+    t.boolean  "has_2fa"
+    t.boolean  "has_files",           null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",      null: false
