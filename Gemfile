@@ -31,6 +31,9 @@ gem 'slack-api'
 # Twitter Bootstrap for our frontend layout
 gem 'bootstrap-sass', '~> 3.3.4'
 
+# Let's break the mold and try some new pagination
+gem 'kaminari'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
