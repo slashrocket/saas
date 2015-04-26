@@ -20,15 +20,15 @@ ActiveRecord::Schema.define(version: 20150426064113) do
     t.string   "slack_id",            null: false
     t.string   "name",                null: false
     t.boolean  "deleted",             null: false
-    t.string   "color",               null: false
+    t.string   "color"
     t.text     "profile",             null: false
-    t.boolean  "is_admin",            null: false
-    t.boolean  "is_owner",            null: false
-    t.boolean  "is_primary_owner",    null: false
-    t.boolean  "is_restricted",       null: false
-    t.boolean  "is_ultra_restricted", null: false
+    t.boolean  "is_admin"
+    t.boolean  "is_owner"
+    t.boolean  "is_primary_owner"
+    t.boolean  "is_restricted"
+    t.boolean  "is_ultra_restricted"
     t.boolean  "has_2fa"
-    t.boolean  "has_files",           null: false
+    t.boolean  "has_files"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
