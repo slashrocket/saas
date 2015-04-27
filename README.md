@@ -6,6 +6,7 @@ Slackbot as a Service - Manage your Slack with ease
 * Run `bundle install`
 * Run `figaro install`
 * Add `slack_token: "<Your API Token Here>"` to `config/application.yml`
+* Run `rake db:setup` to setup a new database
 * Run `rake slack_users:import_all` to pull in current users
 * Call Slack API functions like so: `Slack.users_list`
 
