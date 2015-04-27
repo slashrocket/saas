@@ -11,12 +11,13 @@
 				<% @slack_users.each do |slack_user| %>
 					<tr>
 						<td align="center" class="shrink"><%= image_tag slack_user.profile['image_24'], class: 'avatarimage' %></td>
-						<td><a href="#<%= slack_user.name %>"><%= slack_user.name %></a></td>
+						<td><%= link_to slack_user.name, details_path(slack_user.id), remote: true %></td>
 						<td><%= slack_user.profile['real_name'] %></td>
 						<td><%= slack_user.profile['email'] %></td>
 						<td align="center" class="shrink">
 						        <div class="fa fa-cogs fa-2x useroptions" type="button" data-toggle="popover-bottom" data-content='
 						            <%= link_to "Test 1", "root_path" %>
+						            <br/>
                                     <%= link_to "Test 2", "root_path" %>
                                 '/>
                         </td>
@@ -24,6 +25,11 @@
 				<% end %>
 			</tbody>
 		</table>
+	<div id="userdetailscontainer">
+	    <div id="userdetails">
+	        <h3>Click on a user to show details </h3>
+	    </div>
+	</div>
 </div>
 
 <script>
