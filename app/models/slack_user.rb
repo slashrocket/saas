@@ -25,4 +25,9 @@ class SlackUser < ActiveRecord::Base
 
     slack_user.save!
   end
+
+  def self.search(query)
+    query = "%#{query.downcase}%"
+    where("name LIKE :query", { query: query })
+  end
 end
