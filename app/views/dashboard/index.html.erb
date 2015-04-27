@@ -10,7 +10,7 @@
 			<tbody>
 				<% @slack_users.each do |slack_user| %>
 					<tr>
-						<td align="center" class="shrink"><%= image_tag slack_user.profile['image_24'], class: 'avatarimage' %></td>
+						<td align="center" class="shrink"><%= image_tag slack_user.profile['image_48'], class: 'avatarimage' %></td>
 						<td><%= link_to slack_user.name, details_path(slack_user.id), remote: true %></td>
 						<td><%= slack_user.profile['real_name'] %></td>
 						<td><%= slack_user.profile['email'] %></td>
