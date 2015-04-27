@@ -1,0 +1,17 @@
+<%= form_for @user, url: update_profile_path, method: :patch, html: {class: 'form-2'} do |f| %>
+  <h1><span class="log-in">Edit your password</span></h1>
+
+    <p align="center">
+        <%= f.label :password, "password" %>
+        <%= f.password_field :current_password, autocomplete: "off", placeholder: 'New password' %>
+    <br/>
+        <%= f.label :password_confirmation, "Confirm password" %>
+        <%= f.password_field :password, autocomplete: "off", placeholder: 'Confirm password' %>
+    </p>
+
+  <hr/>
+
+  <p align="center">
+    <%= f.submit "Update", id: 'submit', style: 'float: none; width: 75%;' %>
+  </p>
+<% end %>
