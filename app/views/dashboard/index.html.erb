@@ -10,15 +10,15 @@
 			<tbody>
 				<% @slack_users.each do |slack_user| %>
 					<tr>
-						<td><img src="<%= slack_user.profile['image_24'] %>"></td>
+						<td align="center" class="shrink"><%= image_tag slack_user.profile['image_24'], class: 'avatarimage' %></td>
 						<td><a href="#<%= slack_user.name %>"><%= slack_user.name %></a></td>
 						<td><%= slack_user.profile['real_name'] %></td>
 						<td><%= slack_user.profile['email'] %></td>
-						<td align="center">
-						        <button class="fa fa-ellipsis-v fa-3x" type="button" data-toggle="popover-bottom" data-content="
-						            <li><p>Test 1</p></li>
-                                    <li><p>Test 2</p></li>"
-                                />
+						<td align="center" class="shrink">
+						        <div class="fa fa-cogs fa-2x useroptions" type="button" data-toggle="popover-bottom" data-content='
+						            <%= link_to "Test 1", "root_path" %>
+                                    <%= link_to "Test 2", "root_path" %>
+                                '/>
                         </td>
 					</tr>
 				<% end %>

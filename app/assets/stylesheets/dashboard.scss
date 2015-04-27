@@ -1,3 +1,19 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.useroptions {
+    box-shadow: 4px 4px 5px rgb(136, 136, 136);
+    padding: 4px;
+    cursor: pointer;
+}
+
+.avatarimage {
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+}
+
+.shrink {
+    width: 5%;
+}
