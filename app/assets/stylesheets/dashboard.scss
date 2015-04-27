@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .useroptions {
-    box-shadow: 4px 4px 5px rgb(136, 136, 136);
+    border-radius: 4px;
+    box-shadow: 4px 4px 5px #ccc;
     padding: 4px;
     cursor: pointer;
 }
