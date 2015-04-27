@@ -7,8 +7,7 @@
 	<%= csrf_meta_tags %>
 </head>
 <body>
-
-    <%= render partial: 'layouts/header.html.erb' %>
+    <%= if current_user.present? then render partial: 'layouts/header.html.erb' end %>
     <%= render partial: 'layouts/nprogress.html.erb' %>
 	<%= yield %>
 
