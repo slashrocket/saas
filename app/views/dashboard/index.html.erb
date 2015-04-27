@@ -1,33 +1,37 @@
 <div class="container">
-  <%= paginate @slack_users %>
+	<%= paginate @slack_users %>
 
-  <div class="table-responsive">
-    <table class="table">
-      <thead>
-        <th>Avatar</th>
-        <th>Slack ID</th>
-        <th>Real Name</th>
-        <th>Email</th>
-      </thead>
-      <tbody>
-        <% @slack_users.each do |slack_user| %>
-          <tr>
-            <td><img src="<%= slack_user.profile['image_24'] %>"></td>
-            <td><%= slack_user.name %></td>
-            <td><%= slack_user.profile['real_name'] %></td>
-            <td><%= slack_user.profile['email'] %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+	<div class="table-responsive">
+		<table class="table">
+			<thead>
+				<th>Avatar</th>
+				<th>Slack ID</th>
+				<th>Real Name</th>
+				<th>Email</th>
+			</thead>
+			<tbody>
+				<% @slack_users.each do |slack_user| %>
+					<tr>
+						<td><img src="<%= slack_user.profile['image_24'] %>"></td>
+						<td><a href="#<%= slack_user.name %>"><%= slack_user.name %></a></td>
+						<td><%= slack_user.profile['real_name'] %></td>
+						<td><%= slack_user.profile['email'] %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+
+	<%= paginate @slack_users %>
+
+	<% @slack_users.each do |slack_user| %>
+		<div id="<%= slack_user.name %>" class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="color: #<%= slack_user.color %>;"><%= slack_user.name %></h3>
+			</div>
+			<div class="panel-body">
+				<pre><%= JSON.pretty_generate(slack_user.as_json) %></pre>
+			</div>
+		</div>
+	<% end %>
 </div>
-
-<ul>
-  <% @slack_users.each do |slack_user| %>
-    <li>
-      <p style="color: #<%= slack_user.color %>;"><%= slack_user.name %></p>
-      <pre><%= JSON.pretty_generate(slack_user.as_json) %></pre>
-    </li>
-  <% end %>
-</ul>
