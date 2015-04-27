@@ -1,4 +1,5 @@
 class LoginController < ApplicationController
+  before_action :logged_in_user, except: [:index]
   def index
   end
   

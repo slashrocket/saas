@@ -15,4 +15,12 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
+  
+  # Confirms a logged-in user.
+  def logged_in_user
+    unless logged_in?
+      flash[:alert] = "Please log in."
+      return redirect_to login_path
+    end
+  end
 end
