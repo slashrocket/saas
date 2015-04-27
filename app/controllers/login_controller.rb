@@ -12,6 +12,7 @@ class LoginController < ApplicationController
       flash[:success] = "Profile updated"
       return redirect_to dashboard_path
     else
+      flash[:alert] = "Failed to change password"
       render 'edit'
     end
   end
