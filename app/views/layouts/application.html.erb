@@ -8,7 +8,7 @@
 	<%= stylesheet_link_tag		'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
-	<%= favicon_link_tag 'favicon.jpg' %>
+	<%= favicon_link_tag 'favicon.png' %>
 </head>
 <body>
     <%= if current_user.present? then render partial: 'layouts/header.html.erb' end %>
