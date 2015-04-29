@@ -7,9 +7,9 @@ class DashboardController < ApplicationController
       @slack_users = SlackUser.all
     end
   end
-  
+
   def details
-      @user = SlackUser.find(params[:id])
-      return render partial: 'details.js.erb'
+    @user = SlackUser.find(params[:id])
+    render partial: 'details.js.erb'
   end
 end

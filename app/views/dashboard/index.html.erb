@@ -1,48 +1,48 @@
 <div class="container">
-		<table class="table table-striped table-bordered hover" cellspacing="0" width="100%" id="datatable">
-			<thead>
-				<th>Avatar</th>
-				<th>Slack ID</th>
-				<th>Real Name</th>
-				<th>Email</th>
-				<th></th>
-			</thead>
-			<tbody>
-				<% @slack_users.each do |slack_user| %>
-					<tr>
-						<td align="center" class="shrink"><%= image_tag slack_user.profile['image_48'], class: 'avatarimage' %></td>
-						<td><%= link_to slack_user.name, details_path(slack_user.id), remote: true %></td>
-						<td><%= slack_user.profile['real_name'] %></td>
-						<td><%= slack_user.profile['email'] %></td>
-						<td align="center" class="shrink">
-						        <div class="fa fa-cogs fa-2x useroptions" type="button" data-toggle="popover-bottom" data-content='
-						            <%= link_to "Test 1", "root_path" %>
-						            <br/>
-                                    <%= link_to "Test 2", "root_path" %>
-                                '/>
-                        </td>
-					</tr>
-				<% end %>
-			</tbody>
-		</table>
+    <table class="table table-striped table-bordered hover" cellspacing="0" width="100%" id="datatable">
+	<thead>
+	    <th>Avatar</th>
+	    <th>Slack ID</th>
+	    <th>Real Name</th>
+	    <th>Email</th>
+	    <th></th>
+	</thead>
+	<tbody>
+	    <% @slack_users.each do |slack_user| %>
+		<tr>
+		    <td align="center" class="shrink"><%= image_tag slack_user.profile['image_48'], class: 'avatarimage' %></td>
+		    <td><%= link_to slack_user.name, details_path(slack_user.id), remote: true %></td>
+		    <td><%= slack_user.profile['real_name'] %></td>
+		    <td><%= slack_user.profile['email'] %></td>
+		    <td align="center" class="shrink">
+			<div class="fa fa-cogs fa-2x useroptions" type="button" data-toggle="popover-bottom" data-content='
+			    <%= link_to "Test 1", "root_path" %>
+			    <br/>
+			    <%= link_to "Test 2", "root_path" %>
+			    '/>
+			</td>
+		    </tr>
+		<% end %>
+	    </tbody>
+	</table>
 	<div id="userdetailscontainer">
 	    <div id="userdetails">
-	        <h3>Click on a user to show details </h3>
+		<h3>Click on a user to show details </h3>
 	    </div>
 	</div>
-</div>
+    </div>
 
-<script>
-    $(document).ready(function() {
-        $('#datatable').DataTable({
-            "order": [ 1, "asc" ],
-            "columnDefs": 
-            [{
-                "targets": [ 0, 4 ],
-                "visible": true,
-                "searchable": false,
-                "sortable": false
-            }]
-        });
-    } );
-</script>
+    <script>
+	$(document).ready(function() {
+	    $('#datatable').DataTable({
+		"order": [ 1, "asc" ],
+		"columnDefs": 
+		    [{
+			"targets": [ 0, 4 ],
+			"visible": true,
+			"searchable": false,
+			"sortable": false
+		    }]
+	    });
+	} );
+    </script>
