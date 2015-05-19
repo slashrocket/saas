@@ -1,7 +1,7 @@
 # Slackbot as a Service
 ##Manage your Slack with ease
 
-[![Learn Web Dev - Slack](https://learnwebdev-slackin.herokuapp.com/badge.svg)](https://learnwebdev.github.io)
+[![slashrocket - Slack](https://slashrocket-slackin.herokuapp.com/badge.svg)](https://slashrocket.github.io)
 
 *Note: SaaS requires PostgreSQL in development and production. Be sure to configure PostgreSQL before running SaaS.*
 
